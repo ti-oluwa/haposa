@@ -5,6 +5,8 @@ const sideMenuClose = sideMenu.querySelector('.close');
 const sideMenuLinks = sideMenu.querySelectorAll('a');
 const scrollTracker = document.querySelector('#scroll-tracker');
 const headerElement = document.querySelector('header');
+const headerLinks = headerElement.querySelectorAll('nav a');
+const pageSections = document.querySelectorAll('.page-section');
 
 
 function showSideMenu() {
@@ -67,3 +69,29 @@ const scrollObserver = new IntersectionObserver((entries) => {
 });
 
 scrollObserver.observe(scrollTracker);
+
+
+const pageSectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            headerLinks.forEach(link => {
+                link.classList.remove('in-view');
+                if (entry.target.id === link.getAttribute('href').substring(1)) {
+                    link.classList.add('in-view');
+                };
+            });
+
+            sideMenuLinks.forEach(link => {
+                link.classList.remove('in-view');
+                if (entry.target.id === link.getAttribute('href').substring(1)) {
+                    link.classList.add('in-view');
+                };
+            });
+        };
+    });
+}, { rootMargin: '0px 0px -50% 0px' });
+
+
+pageSections.forEach(section => {
+    pageSectionObserver.observe(section);
+});
