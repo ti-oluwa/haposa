@@ -1,0 +1,423 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ application_name }}</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'home//images//favicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'home//styles//style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="{% static 'home//scripts//utils.js' %}"></script>
+    <script src="{% static 'home//scripts//script.js' %}" defer></script>
+</head>
+
+<body>
+    <div id="hero-bg">
+        <!-- Header Start -->
+        <header>
+            <div id="header-wrapper" class="container">
+                <a href="#" class="logo">{{ application_name }}</a>
+
+                <nav>
+                    <ul class="navigation">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+
+                    <div class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+
+                    <div class="menu">
+                        <div class="menu-header">
+                            <div class="logo">
+                                <h2>{{ application_alias }}</h2>
+                            </div>
+                            <i class="fas fa-times close"></i>
+                        </div>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- Header End -->
+        <span id="scroll-tracker" style="height: 2px;"></span>
+        <!-- Hero Section Start -->
+        <section id="home" class="hero page-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>FRESH FISH & EGGS DELIVERED TO YOUR DOORSTEP</h1>
+                    <p>At {{ application_name | upper }}, we are committed to providing fresh, healthy, and
+                        nutrient-rich fish and eggs.
+                        Our sustainable farming practices ensure the highest quality products for your family and
+                        business needs.</p>
+                    <div class="cta-btns">
+                        <a href="#about" class="cta-btn btn btn-primary">Learn More</a>
+                        <a href="#contact" class="cta-btn btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Hero Section End -->
+    </div>
+
+    <section class="features container page-section" id="services">
+        <div class="feature-cards">
+            <div class="feature-card">
+                <i class="fas fa-fish"></i>
+                <h3>Fish Farming</h3>
+                <p>We specialize in sustainable fish farming, ensuring fresh and healthy fish for our customers.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-egg"></i>
+                <h3>Poultry Farming</h3>
+                <p>Our poultry farming focuses on egg production, delivering high-quality eggs to meet your needs.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Sustainable Practices</h3>
+                <p>We prioritize eco-friendly farming methods to protect the environment and ensure product quality.</p>
+            </div>
+        </div>
+
+        <div class="cta-text">
+            <p>
+                Don't hesitate to contact us for more information. Reach out to our team today!
+                <a href="tel:{{ application_phone }}" class="btn">
+                    <i class="fas fa-phone"></i> {{ application_phone }}
+                </a>
+            </p>
+        </div>
+
+        <div class="feature-details">
+            <div class="why-choose-us">
+                <b>Why Choose Us</b>
+                <h2>Delivering Excellence in Fish & Poultry Farming</h2>
+                <p>At {{ application_name | upper }}, we combine innovation and efficiency to meet the growing demand
+                    for quality
+                    agricultural produce. Our commitment to sustainability ensures that we deliver the best products to
+                    our customers.</p>
+
+                <div class="stats">
+                    <div class="stat">
+                        <p>
+                            <span>Experience</span>
+                            <span>0%</span>
+                        </p>
+                        <div data-stat-value="90"><span></span></div>
+                    </div>
+
+                    <div class="stat">
+                        <p>
+                            <span>Product Variety</span>
+                            <span>0%</span>
+                        </p>
+                        <div data-stat-value="92"><span></span></div>
+                    </div>
+
+                    <div class="stat">
+                        <p>
+                            <span>Product Quality</span>
+                            <span>0%</span>
+                        </p>
+                        <div data-stat-value="95"><span></span></div>
+                    </div>
+
+                    <div class="stat">
+                        <p>
+                            <span>Customer Satisfaction</span>
+                            <span>0%</span>
+                        </p>
+                        <div data-stat-value="98"><span></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlap-image">
+                <img src="{% static 'home//images/features-overlap2.jpg' %}" alt="{{ application_name }}">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="page-section">
+        <div class="container">
+            <div class="about-intro">
+                <div class="about-welcome-text">
+                    <div>
+                        <h2>Welcome to HAPOSA FARMS</h2>
+                        <a href="#contact" class="cta-btn btn btn-primary">Learn more</a>
+                    </div>
+
+                    <p>HAPOSA FARMS is dedicated to producing high-quality fish and eggs through sustainable farming
+                        practices. We ensure optimal farming conditions to deliver fresh, healthy, and nutrient-rich
+                        products to our customers.</p>
+                </div>
+                <div class="about-welcome-images">
+                    <div class="img-wrapper">
+                        <img src="{% static 'home//images//about-fishes.jpg' %}" alt="About Us">
+                    </div>
+                    <div class="stat-cards">
+                        <div class="stat-card">
+                            <i class="fas fa-box"></i> <!-- Updated icon to represent products -->
+                            <h3 data-target-value="{{ delivery_count }}">
+                                {{ delivery_count }} <i class="fas fa-plus"></i>
+                            </h3>
+                            <small>Products Delivered Monthly</small>
+                            <!-- Updated text to reflect both fish and eggs -->
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <h3 data-target-value="{{ customer_count }}">
+                                {{ customer_count }} <i class="fas fa-plus"></i>
+                            </h3>
+                            <small>Satisfied Customers</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="overlap-image">
+                    <img src="{% static 'home//images/eggs-mixture.jpg' %}" alt="About Us">
+                </div>
+
+                <div class="main-content">
+                    <b>About Us</b>
+                    <h2>
+                        Committed to Quality & Sustainability
+                    </h2>
+                    <p>
+                        At {{ application_name | upper }}, we are passionate about delivering the best agricultural
+                        products. Our focus on
+                        innovation and eco-friendly practices ensures that we meet the highest standards of quality and
+                        sustainability.
+                    </p>
+
+                    <ul>
+                        <div>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Fresh & Healthy Fish
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                High-Quality Eggs
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Sustainable Farming Practices
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Customer-Centric Approach
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Affordable Prices
+                            </li>
+                            <li>
+                                <i class="fas fa-check"></i>
+                                Innovation & Efficiency
+                            </li>
+                        </div>
+                    </ul>
+
+                    <a href="#contact" class="cta-btn btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="contact-bg">
+        <section id="contact" class="page-section">
+            <div class="container">
+                <div class="contact-text">
+                    <b>Contact Us</b>
+                    <h3>
+                        Partner with {{ application_name | upper }} Today
+                    </h3>
+                    <p>We are here to meet your needs for fresh fish and eggs. Contact us today to learn more about our
+                        products and services.</p>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Let's connect</h3>
+                    <form action="{% url 'home:contact_us_form' %}" id="contact-us-form">
+                        {% csrf_token %}
+                        <div class="form-field">
+                            <label for="email">Email*</label>
+                            <input type="email" required autocomplete="email" name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-field">
+                                <label for="firstname">First name</label>
+                                <input type="text" name="firstname" autocomplete="given-name">
+                            </div>
+
+                            <div class="form-field">
+                                <label for="lastname">Last name</label>
+                                <input type="text" name="lastname" autocomplete="family-name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-field">
+                                <label for="country">Country</label>
+                                <input type="text" name="country" autocomplete="country-name">
+                            </div>
+
+                            <div class="form-field">
+                                <label for="phone">Phone number</label>
+                                <input type="tel" name="phone" autocomplete="tel">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="message">Message</label>
+                            <input type="text" name="message" placeholder="Write your message here..." required>
+                        </div>
+
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="location" class="container page-section">
+        <div class="location-text">
+            <h2>Our Location</h2>
+            <p>Visit us at our farm to see how we produce the best fish and eggs for you.</p>
+        </div>
+
+        <div class="location-map">
+            <span class="tooltip">
+                <i class="fas fa-info-circle"></i>
+                Click the large red marker to get directions
+            </span>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d16479.077838945155!2d5.658031627073798!3d6.351411155980617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sNO.%2021%20EHIGIE%20STREET%2C%20OFF%20BENIN-AGBOR%20ROAD%2C%20IKPOBA%20HILL%2C%20BENIN%20CITY%2C%20EDO%20STATE!5e0!3m2!1sen!2sng!4v1743770106675!5m2!1sen!2sng"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <section class="footer-subscribe">
+            <div class="container">
+                <div class="subscribe-text">
+                    <p>Subscribe to Newsletter</p>
+                    <h2>Stay Updated with {{ application_name | upper }}</h2>
+                </div>
+
+                <div class="subscribe-form-wrapper">
+                    <form id="subscribe-form">
+                        {% csrf_token %}
+                        <input type="email" name="email" id="email" placeholder="Enter your email" disabled>
+                        <button type="submit" disabled>
+                            <i class="fas fa-paper-plane"></i>
+                            Subscribe Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-main">
+            <div class="footer-main-body container">
+                <div class="footer-links-wrapper">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li>
+                                <a href="#home">Home</a>
+                            </li>
+
+                            <li><a href="#about">
+                                    About
+                                </a></li>
+
+                            <li><a href="#services">
+                                    Services
+                                </a></li>
+                            <li><a href="#location">
+                                    Location
+                                </a></li>
+                            <li><a href="#contact">
+                                    Contact Us
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-contacts">
+                    <div class="contacts-primary">
+                        <h3>Contact Info</h3>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://www.google.com/maps/place/NO.+21+EHIGIE+STREET,+OFF+BENIN-AGBOR+ROAD,+IKPOBA+HILL,+BENIN+CITY,+EDO+STATE/@6.3514112,5.6580316,17z/data=!3m1!4b1!4m6!3m5!1s0x1038c7f9a2e0d3b7:0x8f2c4a2e4d5f3b9!8m2!3d6.3514112!4d5.6602203!16s%2Fg%2F11c1gqjv_0?entry=ttu">
+                                    <i class="fas fa-map-marker-alt"></i><span>NO. 21 EHIGIE STREET, OFF BENIN-AGBOR
+                                        ROAD, IKPOBA
+                                        HILL, BENIN CITY, EDO STATE</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:{{ application_phone }}">
+                                    <i class="fas fa-phone"></i><span>{{ application_phone }}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:{{  application_email | lower }}">
+                                    <i class="fas fa-envelope"></i><span>{{ application_email | lower }}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="contacts-secondary">
+                        <h3>Connect With Us</h3>
+                        <p>We are always here to answer your questions and provide the best service possible.</p>
+                        <a href="#contact" class="cta-btn btn">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-credits container">
+                <div class="logo">
+                    <h2>{{ application_alias | upper }}</h2>
+                    <small>Delivering quality fish and eggs through sustainable farming practices.</small>
+                </div>
+
+                <small>&copy; {{ current_year }} {{ application_name | upper }}. All Rights Reserved.</small>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>
